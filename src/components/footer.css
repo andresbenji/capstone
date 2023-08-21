@@ -1,0 +1,84 @@
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 2.5rem;
+    background: #004990;
+  }
+  
+  .footer-box h4 {
+    margin-bottom: 1.5rem;
+    font-size: 18px;
+    color: white
+  }
+  
+  .footer-box li {
+    margin-bottom: 18px;
+  }
+  
+  .footer-box li a {
+    display: block;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    transition: all .50s ease;
+  }
+  
+  .footer-box li a:hover {
+    transform: translateX(-7px);
+    color: red;
+  }
+  
+  .footer-box h5 {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+  }
+  
+  .socials {
+    display: flex;
+    margin-top: 1.8rem;
+  }
+  
+  .socials i {
+    height: 37px;
+    width: 37px;
+    background: transparent;
+    border: 2px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-right: 1.1rem;
+    color: white;
+    transition: all .50s ease;
+  }
+  
+  .socials i:hover {
+    background: white;
+    color: red;
+    transform: scale(1.1);
+  }
+  
+  .trademark {
+    text-align: center;
+    background: #004990;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding: 20px;
+  }
+  
+  .scroll-top {
+    position: fixed;
+    bottom: 2.3rem;
+    right: 2.3rem;
+  }
+  
+  .scroll-top i {
+    background-color: white;
+    color: #004990;
+    font-size: 22px;
+    padding: 12px;
+    border-radius: 30px;
+  }
