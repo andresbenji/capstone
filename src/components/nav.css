@@ -16,6 +16,7 @@ nav {
     float: left;
     position: relative;
     font-family: 'Montserrat', sans-serif;
+    z-index: 4;
   }
   nav ul li a {
     display: block;
@@ -47,7 +48,7 @@ nav {
     z-index: 1;
     /* Guarantees that the dropdown will display on top of any content. */
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-    display: none;
+    /* display: none; */
   }
   
   .nav-mobile {

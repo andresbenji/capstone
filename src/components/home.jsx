@@ -8,11 +8,16 @@ import Slideshow from './slideshow';
 
 const Home = () => {
     const [selectedLang, setSelectedLang] = useState('en');
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   
     const handleLangChange = (event) => {
       const lang = event.target.value;
       setSelectedLang(lang);
     };
+
+    const handleDropdownToggle = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+      };
   
     return (
         <>
@@ -34,18 +39,21 @@ const Home = () => {
           </div>
           <nav>
             <div className="nav-mobile">
-              <a id="nav-toggle" href="#!"><span></span></a>
+              <a id="nav-toggle" href="#!" onClick={handleDropdownToggle}><span></span></a>
             </div>
             <ul className="nav-list">
               <li><a href="/home">{selectedLang === 'en' ? 'Home' : 'Inicio'}</a></li>
               <li><a href="/about">{selectedLang === 'en' ? 'About Us' : 'Sobre Nosotros'}</a></li>
               <li>
-                <a href="#!">{selectedLang === 'en' ? 'Available Homes' : 'Casas Disponibles'}</a>
-                <ul className="nav-dropdown">
-                  <li><a href="#!">{selectedLang === 'en' ? 'Apartments for Rent' : 'Apartamentos en Renta'}</a></li>
-                  <li><a href="#!">{selectedLang === 'en' ? 'Townhomes for Rent' : 'Casas en Renta'}</a></li>
-                  <li><a href="#!">{selectedLang === 'en' ? 'Houses for Rent' : 'Casas en Renta'}</a></li>
-                </ul>
+                
+                <a href="#!" onClick={handleDropdownToggle}>{selectedLang === 'en' ? 'Available Homes' : 'Casas Disponibles'}</a>
+                {isDropdownOpen && (
+                  <ul className="nav-dropdown">
+                    <li><a href="#!">{selectedLang === 'en' ? 'Apartments for Rent' : 'Apartamentos en Renta'}</a></li>
+                    <li><a href="#!">{selectedLang === 'en' ? 'Townhomes for Rent' : 'Casas en Renta'}</a></li>
+                    <li><a href="#!">{selectedLang === 'en' ? 'Houses for Rent' : 'Casas en Renta'}</a></li>
+                  </ul>
+                )}
               </li>
               <li><a href="#!">{selectedLang === 'en' ? 'Contact' : 'Contacto'}</a></li>
             </ul>
