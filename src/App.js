@@ -1,10 +1,10 @@
-// import Footer from './components/footer';
 import Home from './components/home';
-// import Navigation from './components/nav';
+import About from './components/about';
 // import Slideshow from './components/slideshow';
 // import Testimonial from './components/testimonials';
 // import LanguageSwitcher from './components/LanguageSwitcher';
 import './App.css';
+import './components/about.css'
 import './components/footer.css';
 import './components/home.css';
 import './components/nav.css';
@@ -24,6 +24,7 @@ const App = () => {
    {/* {<Testimonial/>} */}
     <Routes>
           <Route path="/home" element={<Home/>} />
+          <Route path="/about" element={<About/>} />
           {/* { <Route path="/products" element={<ProductList/>} /> } */}
           {/* <Route path="/contact" element={<Contact />} /> */}
     </Routes>

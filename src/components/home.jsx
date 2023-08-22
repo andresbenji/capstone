@@ -37,8 +37,8 @@ const Home = () => {
               <a id="nav-toggle" href="#!"><span></span></a>
             </div>
             <ul className="nav-list">
-              <li><a href="#!">{selectedLang === 'en' ? 'Home' : 'Inicio'}</a></li>
-              <li><a href="#!">{selectedLang === 'en' ? 'About Us' : 'Sobre Nosotros'}</a></li>
+              <li><a href="/home">{selectedLang === 'en' ? 'Home' : 'Inicio'}</a></li>
+              <li><a href="/about">{selectedLang === 'en' ? 'About Us' : 'Sobre Nosotros'}</a></li>
               <li>
                 <a href="#!">{selectedLang === 'en' ? 'Available Homes' : 'Casas Disponibles'}</a>
                 <ul className="nav-dropdown">
