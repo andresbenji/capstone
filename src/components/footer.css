@@ -1,8 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+  }
+  
 .footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, auto));
     gap: 2.5rem;
-    background: #004990;
+    background: #729dc9;
   }
   
   .footer-box h4 {
@@ -25,7 +35,7 @@
   
   .footer-box li a:hover {
     transform: translateX(-7px);
-    color: red;
+    color: #012c60;
   }
   
   .footer-box h5 {
@@ -56,7 +66,7 @@
   
   .socials i:hover {
     background: white;
-    color: red;
+    color: #012c60;
     transform: scale(1.1);
   }
   

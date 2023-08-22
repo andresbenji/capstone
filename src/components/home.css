@@ -1,0 +1,138 @@
+.benefits {
+    background-color: #729dc9;
+    padding: 3% 10%;
+    text-align: center;
+  }
+  
+  .benefits h2 {
+    font-size: 32px;
+    margin-bottom: 60px;
+    color: #faf3e6;
+  }
+  
+  .benefits h4 {
+    color: #faf3e6;
+  }
+  
+  .benefits a {
+    text-decoration: none;
+  }
+  
+  .benefits p {
+    color: white;
+  }
+  
+  .benefits-icons {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  
+  .benefits-icons a:visited {
+    color: inherit;
+  }
+  
+  .benefits-icon {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .benefits-icon:hover {
+    transform: scale(1.3);
+  }
+  
+  .benefits-icon i {
+    font-size: 60px;
+    margin-bottom: 15px;
+    color: white;
+    transition: color 1s ease;
+  }
+  
+  .benefits-icon:hover i,
+  .benefits-icon:hover h4,
+  .benefits-icon:hover p {
+    color: #2b62a5;
+    transition: color 1s ease;
+  }
+  
+  .benefits-icon h4 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .benefits-icon p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 250px;
+    text-align: center;
+  }
+  
+  .newsletter-section {
+    background: whitesmoke;
+    padding: 60px 0;
+    text-align: center;
+    color: #2376c8;
+  }
+  
+  .newsletter-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .newsletter-content h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .newsletter-content p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .newsletter-form input[type="email"] {
+    padding: 10px;
+
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    font-size: 16px;
+  }
+  
+  .newsletter-form input[type="Full Name"] {
+    padding: 10px;
+    padding-left: 10x;
+    margin-left: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    font-size: 16px;
+  }
+
+
+  .newsletter-form button {
+    padding: 10px 20px;
+    background-color: #2b62a5;
+    color: #fff;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #012c60;
+  }
