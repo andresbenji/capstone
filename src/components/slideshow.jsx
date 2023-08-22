@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import f5 from './house1.jpeg'
-import f6 from './house2.jpeg'
-import f7 from './house3.jpeg'
-import f8 from './house4.jpeg'
+import f5 from './home.jpeg'
+import f6 from './home2.webp'
+import f7 from './home3.jpeg'
+import f8 from './home4.jpeg'
 
 const Slideshow = () => {
     useEffect(() => {
