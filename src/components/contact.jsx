@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import homes from "./images/homes.jpeg";
+// import homes from "./images/homes.jpeg";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
