@@ -24,6 +24,19 @@ const SignupPopup = ({ isOpen, onClose }) => {
       <div className="popup-content">
       <h2>Login or Sign Up</h2>
         <form onSubmit={handleSubmit}>
+
+          <input
+          type="firstName"
+          placeholder="First Name"
+          required
+          />
+
+          <input
+          type="lastName"
+          placeholder="Last Name"
+          required
+          />
+
           <input
             type="email"
             placeholder="Email"

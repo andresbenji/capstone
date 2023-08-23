@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
+import SignupPopup from './SignupPopup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPerson } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faInstagram, faSnapchat, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const About = () => {
     const [selectedLang, setSelectedLang] = useState('en');
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
   
     const handleLangChange = (event) => {
       const lang = event.target.value;
@@ -13,6 +16,13 @@ const About = () => {
 
     const handleDropdownToggle = () => {
         setIsDropdownOpen(!isDropdownOpen);
+      };
+      const openPopup = () => {
+        setIsPopupOpen(!isPopupOpen);
+      };
+    
+      const closePopup = () => {
+        setIsPopupOpen(false);
       };
   
     return (
@@ -52,7 +62,11 @@ const About = () => {
                 )}
               </li>
               <li><a href="#!">{selectedLang === 'en' ? 'Contact' : 'Contacto'}</a></li>
-              <li>< a href="#!">{selectedLang === 'en' ? 'Sign Up' : 'Inscribirse'}</a></li>
+              <SignupPopup isOpen={isPopupOpen} onClose={closePopup} />
+              {/* <button onClick={openPopup}></button> */}
+              <li><a href="#!" onClick={openPopup} isOpen={isPopupOpen} onClose={closePopup}>
+    <FontAwesomeIcon icon={faPerson} style={{color: "#ffffff,"}} />
+  </a></li>
             </ul>
           </nav>
         </div>
