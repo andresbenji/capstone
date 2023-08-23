@@ -1,135 +1,56 @@
-#column1{
-    grid-template-columns: repeat(2,1);
-    /* float:left; */
-    margin-top: 5%;
-    width:40%;
-    height:30%;
-    margin-left: 4.3%;
-    background-color:#729dc9;
-  }
-  
-  #column2{
-    /* float:left; */
-    margin-top: 5%;
-    width:40%;
-    height:30%;
-    margin-left: 4%;
-    background-color:#729dc9;
-    box-shadow:0px 0px 10px inset;
-  }
-  
-  #column3{
-    /* float:left; */
-    grid-template-columns: repeat(2,1);
-    margin-top: -64.5%;
-    margin-left: 54.4%;
-    
-     width:40%;
-    height:30%; 
-    background-color:#012c60;
-  }
-  #column4{
-    /* float:right;  */
-    margin-left: 54.4%;
-    margin-bottom: 30%;
-    width:40%;
-    height:30%;
-    background-color:#012c60;
-    box-shadow:0px 0px 10px inset;
-  }
+container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the images horizontally */
+  gap: 20px; /* Adjust the gap between images */
+}
+.image {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.image img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.image p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+h1 {
+  color: #012c60;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0%;
+}
+h2 {
+  color: #012c60;
+  font-size: 24px;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0%;
+}
 
-  #column5{
-    /* float:right;  */
-    margin-left: 30.9%;
-    margin-bottom: 5%; 
-    width:40%;
-    height:40%;
-    background-color:#729dc9;
-    box-shadow:0px 0px 10px inset;
-  }
-
-  #portrait1 {
-    position:absolute;
-    background-image:url("https://lightroom.adobe.com/v2c/spaces/97b7f5a835ef426e89a9836ed6ad8676/assets/9ed0f9690a12453f8467e0029c83943d/revisions/d71d0d1808554cd3bf9c606be99daa8b/renditions/c3c2cce3dd2c3551406a73fa6f1a5ff5");
-    width:180px;
-    height:180px;
-    left:23.6%;
-    top:35%;
-    transform:translate(-50%,-50%);
-    background-position:top;
-    background-size:100%;
-    border-radius:100px;
-    box-shadow:1px 1px 10px;
-  }
-  #portrait2 {
-    position:absolute;
-    background-image:url("https://lightroom.adobe.com/v2c/spaces/97b7f5a835ef426e89a9836ed6ad8676/assets/aa88fa672e6f469fb3a886c8fd389a9a/revisions/5cdcd4d7510c489fb2d2900488861bca/renditions/7406ce8c0b51632284c9de8bc91aed30");
-    width:180px;
-    height:180px;
-    right:63.1%; 
-    top:95%;
-    transform:translate(-50%,-50%);
-    background-position:top;
-    background-size:100%;
-    border-radius:100px;
-    box-shadow:1px 1px 10px;
-  }
-  
-  #portrait3 {
-    position:absolute;
-    background-image:url("https://lightroom.adobe.com/v2c/spaces/97b7f5a835ef426e89a9836ed6ad8676/assets/4117af3195314c669eb9087195a381a9/revisions/c93dc2ee561f4481aba024fa4df186a8/renditions/cefad4099eab67f6cbe9d851945c3d18");
-    width:180px;
-    height:180px;
-    right:15.6%;
-    top:35%;
-    transform:translate(-50%,-50%);
-    background-position:top;
-    background-size:100%;
-    border-radius:100px;
-    box-shadow:1px 1px 10px;
-  }
-
-  #portrait4 {
-    position:absolute;
-    background-image:url("https://lightroom.adobe.com/v2c/spaces/97b7f5a835ef426e89a9836ed6ad8676/assets/6695a828ea204a5c93bd529243c2ea55/revisions/a55af6569d2f41d2968c1365da53c918/renditions/469f9aa70a07dda6f6404c2b98cf61fb");
-    width:180px;
-    height:180px;
-    left:75%; 
-    top:95%;
-    transform:translate(-50%,-50%);
-    background-position:top;
-    background-size:100%;
-    border-radius:100px;
-    box-shadow:1px 1px 10px;
-  }
-
-  #portrait5 {
-    position:absolute;
-    background-image:url("https://lightroom.adobe.com/v2c/spaces/97b7f5a835ef426e89a9836ed6ad8676/assets/263328596d7d415d84c2b3020b80c77d/revisions/e60d39013dc8448db908a45073625746/renditions/66d532195df31492ad7295ae57904d45");
-    width:180px;
-    height:180px;
-    left:50%; 
-    top: 165%;
-    transform:translate(-50%,-50%);
-    background-position:top;
-    background-size:100%;
-    border-radius:100px;
-    box-shadow:1px 1px 10px;
-  }
-
-
-  .photohead {
-    color:white;
-    font-family:sans-serif;
-    text-align:center;
-    margin-top:45vh;
-  }
-  
-  .photodescription{
-    font-family:verdana;
-    font-size:16px;
-    text-align:justify;
-    color:white;
-    padding:30px;
-  }
-  
+h3 {
+  color: #012c60;
+  font-size: 32px;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0%;
+}
+h4 {
+  color: #012c60;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.2;
+  text-align: center;
+  margin: 0%;
+}
