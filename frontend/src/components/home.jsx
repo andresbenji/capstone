@@ -5,6 +5,7 @@ import f11 from './keys.jpeg';
 import Slideshow from './slideshow';
 import SignupPopup from './SignupPopup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPerson } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faInstagram, faSnapchat, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 
@@ -71,7 +72,9 @@ const Home = () => {
               <li><a href="#!">{selectedLang === 'en' ? 'Contact' : 'Contacto'}</a></li>
               <SignupPopup isOpen={isPopupOpen} onClose={closePopup} />
               {/* <button onClick={openPopup}></button> */}
-              <li><a href="#!" onClick={openPopup}>{selectedLang === 'en' ? 'Sign Up' : 'Inscribe'}</a></li>
+              <li><a href="#!" onClick={openPopup} isOpen={isPopupOpen} onClose={closePopup}>
+    <FontAwesomeIcon icon={faPerson} style={{color: "#ffffff,"}} />
+  </a></li>
             </ul>
           </nav>
         </div>
