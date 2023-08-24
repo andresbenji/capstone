@@ -13,6 +13,7 @@ const importData = async () => {
         await User.deleteMany();
 
         await User.insertMany(users);
+        
 
         console.log(chalk.inverse.green('Data Imported!'))
         process.exit();
