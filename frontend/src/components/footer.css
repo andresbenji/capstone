@@ -18,7 +18,9 @@
   .footer-box h4 {
     margin-bottom: 1.5rem;
     font-size: 18px;
-    color: white
+    color: white;
+    margin-right: 50px;
+
   }
   
   .footer-box li {
@@ -31,6 +33,7 @@
     font-size: 15px;
     font-weight: 500;
     transition: all .50s ease;
+    margin-left: 80px;
   }
   
   .footer-box li a:hover {
@@ -42,6 +45,7 @@
     font-size: 16px;
     font-weight: 600;
     color: white;
+    /* margin-right: 200px; */
   }
   
   .socials {

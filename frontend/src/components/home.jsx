@@ -3,12 +3,18 @@ import f9 from './gp.jpeg';
 import f10 from './family.jpeg';
 import f11 from './keys.jpeg';
 import Slideshow from './slideshow';
+import SignupPopup from './SignupPopup';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPerson } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faInstagram, faSnapchat, faTwitter } from '@fortawesome/free-brands-svg-icons';
+
 
 
 
 const Home = () => {
     const [selectedLang, setSelectedLang] = useState('en');
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isPopupOpen, setIsPopupOpen] = useState(false);
   
     const handleLangChange = (event) => {
       const lang = event.target.value;
@@ -17,6 +23,14 @@ const Home = () => {
 
     const handleDropdownToggle = () => {
         setIsDropdownOpen(!isDropdownOpen);
+      };
+
+      const openPopup = () => {
+        setIsPopupOpen(!isPopupOpen);
+      };
+    
+      const closePopup = () => {
+        setIsPopupOpen(false);
       };
   
     return (
@@ -56,10 +70,16 @@ const Home = () => {
                 )}
               </li>
               <li><a href="#!">{selectedLang === 'en' ? 'Contact' : 'Contacto'}</a></li>
+              <SignupPopup isOpen={isPopupOpen} onClose={closePopup} />
+              {/* <button onClick={openPopup}></button> */}
+              <li><a href="#!" onClick={openPopup} isOpen={isPopupOpen} onClose={closePopup}>
+    <FontAwesomeIcon icon={faPerson} style={{color: "#ffffff,"}} />
+  </a></li>
             </ul>
           </nav>
         </div>
       </section>
+      
 
 
           <Slideshow/>
@@ -123,17 +143,17 @@ const Home = () => {
             {selectedLang === 'en' && (
               <div className="benefits-icon">
                 {/* English content */}
+                <img src={f11} alt="Rental Assistance" />
                 <h4>Rental Assistance</h4>
                 <p>Find out how we can assist in helping you pay rent.</p>
-                <img src={f11} alt="Rental Assistance" />
               </div>
             )}
             {selectedLang === 'es' && (
               <div className="benefits-icon">
                 {/* Spanish content */}
+                <img src={f11} alt="Asistencia de alquiler" />
                 <h4>Asistencia de alquiler</h4>
                 <p>Descubra cómo podemos ayudarlo a pagar el alquiler.</p>
-                <img src={f11} alt="Asistencia de alquiler" />
               </div>
             )}
           </a>
@@ -159,17 +179,17 @@ const Home = () => {
             {selectedLang === 'en' && (
               <div className="benefits-icon">
                 <i className="fa-solid fa-sink"></i>
+                <img src={f9} alt="Government Partners" />
                 <h4>Government Partners</h4>
                 <p>Innovative solutions to challenges in affordable housing.</p>
-                <img src={f9} alt="Government Partners" />
               </div>
             )}
             {selectedLang === 'es' && (
               <div className="benefits-icon">
                 <i className="fa-solid fa-sink"></i>
+                <img src={f9} alt="Socios gubernamentales" />
                 <h4>Socios gubernamentales</h4>
                 <p>Soluciones innovadoras a los desafíos de la vivienda asequible.</p>
-                <img src={f9} alt="Socios gubernamentales" />
               </div>
             )}
           </a>
@@ -265,11 +285,14 @@ const Home = () => {
           <h4 style={{ display: selectedLang === 'es' ? 'block' : 'none' }}>VIVIENDA PARA TI</h4>
           <h5>{selectedLang === 'en' ? 'Connect with us' : 'Conéctate con nosotros'}</h5>
           <div className="socials">
-            <a href="#"><i className="fa-brands fa-facebook"></i></a>
-            <a href="#"><i className="fa-brands fa-instagram"></i></a>
-            <a href="#"><i className="fa-brands fa-snapchat"></i></a>
-            <a href="#"><i className="fa-brands fa-twitter"></i></a>
-          </div>
+          <a href="https://www.facebook.com"><i className="fa-brands fa-snapchat"><FontAwesomeIcon icon={faFacebook} /></i></a>
+
+          <a href="https://www.instagram.com"><i className="fa-brands fa-snapchat"><FontAwesomeIcon icon={faInstagram} /></i></a>
+
+        <a href="https://www.snapchat.com"><i className="fa-brands fa-snapchat"><FontAwesomeIcon icon={faSnapchat} /></i></a>
+        
+        <a href="https://www.x.com"><i className="fa-brands fa-snapchat"><FontAwesomeIcon icon={faTwitter} /></i></a>
+      </div>
         </div>
       </section>
     </>
