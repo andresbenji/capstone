@@ -11,6 +11,7 @@ import './components/nav.css';
 import './components/slideshow.css';
 import './components/testimonials.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import TestZillowApi from './components/testZillowApi';
 
 
 const App = () => {
@@ -25,6 +26,7 @@ const App = () => {
     <Routes>
           <Route path="/home" element={<Home/>} />
           <Route path="/about" element={<About/>} />
+          <Route path="/testzillow" element={<TestZillowApi />} />
           {/* { <Route path="/products" element={<ProductList/>} /> } */}
           {/* <Route path="/contact" element={<Contact />} /> */}
     </Routes>
