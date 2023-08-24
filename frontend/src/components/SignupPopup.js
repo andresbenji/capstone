@@ -40,14 +40,14 @@ const SignupPopup = ({ isOpen, onClose }) => {
           <input
             type="email"
             placeholder="Email"
-            value={email}
+            // value={email}
             onChange={handleEmailChange}
             required
           />
           <input
             type="password"
             placeholder="Password"
-            value={password}
+            // value={password}
             onChange={handlePasswordChange}
             required
           />
