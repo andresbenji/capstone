@@ -25,13 +25,10 @@ const Home = () => {
         setIsDropdownOpen(!isDropdownOpen);
       };
 
-      const openPopup = () => {
+      const togglePopup = () => {
         setIsPopupOpen(!isPopupOpen);
       };
     
-      const closePopup = () => {
-        setIsPopupOpen(false);
-      };
   
     return (
         <>
@@ -69,16 +66,25 @@ const Home = () => {
                   </ul>
                 )}
               </li>
-              <li><a href="#!">{selectedLang === 'en' ? 'Contact' : 'Contacto'}</a></li>
-              <SignupPopup isOpen={isPopupOpen} onClose={closePopup} />
+              <li>
+                <a href="#!">{selectedLang === 'en' ? 'Contact' : 'Contacto'}</a>
+                </li>
+              {/* <SignupPopup isOpen={isPopupOpen} onClose={closePopup} /> */}
               {/* <button onClick={openPopup}></button> */}
-              <li><a href="#!" onClick={openPopup} isOpen={isPopupOpen} onClose={closePopup}>
-    <FontAwesomeIcon icon={faPerson} style={{color: "#ffffff,"}} />
-  </a></li>
+              <li>
+                <a href="#!" onClick={togglePopup} >
+    <FontAwesomeIcon icon={faPerson} style={{color: "#ffffff,"}} onClose={togglePopup} />
+               </a>
+              </li>
+
+              <SignupPopup isOpen={isPopupOpen} onClose={togglePopup} />
+
             </ul>
           </nav>
         </div>
       </section>
+
+      {/* { isPopupOpen && <SignupPopup isOpen={isPopupOpen} onClose={closePopup} />} */}
       
 
 
