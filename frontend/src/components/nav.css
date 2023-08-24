@@ -11,12 +11,13 @@ nav {
     list-style: none;
     margin: 0;
     padding: 0;
+    padding-left: 235px;
   }
   nav ul li {
     float: left;
     position: relative;
     font-family: 'Montserrat', sans-serif;
-    z-index: 4;
+    /* z-index: 4; */
   }
   nav ul li a {
     display: block;
@@ -45,7 +46,7 @@ nav {
   
   .nav-dropdown {
     position: absolute;
-    z-index: 1;
+    /* z-index: 27; */
     /* Guarantees that the dropdown will display on top of any content. */
     box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
     /* display: none; */
@@ -148,7 +149,7 @@ nav {
   
   .brand {
     position: absolute;
-    padding-left: 20px;
+    padding-left: -150px;
     float: left;
     line-height: 70px;
     text-transform: uppercase;
