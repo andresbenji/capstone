@@ -14,23 +14,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
-<<<<<<< HEAD
-    <>
-      <Router>
-        {/* {<Navigation/>} */}
-        {/* {<LanguageSwitcher/>} */}
-        {/* {<Slideshow/>} */}
-        {/* {<Testimonial/>} */}
-        <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          {/* { <Route path="/products" element={<ProductList/>} /> } */}
-          {/* <Route path="/contact" element={<Contact />} /> */}
-        </Routes>
-        {/* <Footer /> */}
-      </Router>
-    </>
-=======
    <>
    <Router >
    {/* {<Navigation/>} */}
@@ -46,7 +29,6 @@ const App = () => {
   {/* <Footer /> */}
   </Router>
    </>
->>>>>>> main
   );
 };
 
