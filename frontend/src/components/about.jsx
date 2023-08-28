@@ -62,11 +62,11 @@ const About = () => {
                 )}
               </li>
               <li><a href="#!">{selectedLang === 'en' ? 'Contact' : 'Contacto'}</a></li>
-              <SignupPopup isOpen={isPopupOpen} onClose={closePopup} />
+              {/* <SignupPopup isOpen={isPopupOpen} onClose={closePopup} /> */}
               {/* <button onClick={openPopup}></button> */}
-              <li><a href="#!" onClick={openPopup} isOpen={isPopupOpen} onClose={closePopup}>
+              {/* <li><a href="#!" onClick={openPopup} isOpen={isPopupOpen} onClose={closePopup}>
     <FontAwesomeIcon icon={faPerson} style={{color: "#ffffff,"}} />
-  </a></li>
+  </a></li> */}
             </ul>
           </nav>
         </div>
