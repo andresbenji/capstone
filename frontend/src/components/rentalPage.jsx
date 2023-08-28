@@ -1,6 +1,10 @@
 // import React from "react";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import "./rentalPage.css";
 import RentalCard from "./RentalCard";
+// import axios from "axios";
+import Footer from "./footer";
+// import Nav from "./";
 import house1 from "../components/images/house1.webp";
 import house2 from "../components/images/house2.webp";
 import house3 from "../components/images/house3.webp";
@@ -20,20 +24,41 @@ const RentalsPage = () => {
     setSearchText(event.target.value);
   };
 
+  const [selectedLang, setSelectedLang] = useState("en");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handleLangChange = (event) => {
+    const lang = event.target.value;
+    setSelectedLang(lang);
+  };
+
+  const handleDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const openPopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
+
   const rentalsData = [
     {
       id: 1,
       title: "1510 Catherine Simmons Ave 2",
       location: "1510 Catherine Simmons Ave 2, Charlotte, NC 28216",
       price: "$995/month",
-      image: "", // Replace with actual image URL
+      image: "./public/images/home2.webp", // Replace with actual image URL
     },
     {
       id: 2,
       title: "1032 Karendale Ave",
       location: "1032 Karendale Ave, Charlotte, NC 28208",
       price: "$499/month",
-      image: "house2.webp", // Replace with actual image URL
+      image: "./public/images/house2.webp", // Replace with actual image URL
     },
 
     {
@@ -89,7 +114,98 @@ const RentalsPage = () => {
   });
 
   return (
+    // header start
     <div className="rentals-page">
+      <select id="lang-switch" onChange={handleLangChange}>
+        <option value="en">English</option>
+        <option value="es">Espanol</option>
+      </select>
+
+      <h1>
+        <span
+          lang="en"
+          style={{ display: selectedLang === "en" ? "block" : "none" }}
+        ></span>
+        <span
+          lang="es"
+          style={{ display: selectedLang === "es" ? "block" : "none" }}
+        ></span>
+      </h1>
+
+      <section className="navigation">
+        <div className="nav-container">
+          <div className="brand">
+            <a href="#!">
+              {selectedLang === "en"
+                ? "Affordable Housing"
+                : "Vivienda Asequible"}
+            </a>
+          </div>
+          <nav>
+            <div className="nav-mobile">
+              <a id="nav-toggle" href="#!" onClick={handleDropdownToggle}>
+                <span></span>
+              </a>
+            </div>
+            <ul className="nav-list">
+              <li>
+                <a href="/home">{selectedLang === "en" ? "Home" : "Inicio"}</a>
+              </li>
+              <li>
+                <a href="/about">
+                  {selectedLang === "en" ? "About Us" : "Sobre Nosotros"}
+                </a>
+              </li>
+              <li>
+                <a href="/product" onClick={handleDropdownToggle}>
+                  {selectedLang === "en"
+                    ? "Available Homes"
+                    : "Casas Disponibles"}
+                </a>
+                {isDropdownOpen && (
+                  <ul className="nav-dropdown">
+                    <li>
+                      <a href="#!">
+                        {selectedLang === "en"
+                          ? "Apartments for Rent"
+                          : "Apartamentos en Renta"}
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#!">
+                        {selectedLang === "en"
+                          ? "Townhomes for Rent"
+                          : "Casas en Renta"}
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#!">
+                        {selectedLang === "en"
+                          ? "Houses for Rent"
+                          : "Casas en Renta"}
+                      </a>
+                    </li>
+                  </ul>
+                )}
+              </li>
+
+              <li>
+                <a href="/contact">
+                  {selectedLang === "en" ? "Contact" : "Contacto"}
+                </a>
+              </li>
+              {/* <SignupPopup isOpen={isPopupOpen} onClose={closePopup} /> */}
+              {/* <button onClick={openPopup}></button> */}
+              {/* <li><a href="#!" onClick={openPopup} isOpen={isPopupOpen} onClose={closePopup}>
+    <FontAwesomeIcon icon={faPerson} style={{color: "#ffffff,"}} />
+  </a></li> */}
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+      {/* header end */}
+
       <h1>Available Rentals in Charlotte, NC</h1>
       <div className="filters">
         <label htmlFor="filter">Filter by Type:</label>
@@ -111,6 +227,8 @@ const RentalsPage = () => {
           <RentalCard key={rental.id} rental={rental} />
         ))}
       </div>
+
+      <Footer />
     </div>
   );
 };
