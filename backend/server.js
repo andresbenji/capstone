@@ -6,7 +6,7 @@ const port = process.env.PORT || 5000;
 const app = express();
 
 import axios from 'axios';
-const apiKey = 'ccdd56a97emshe2a0dd7beb36da2p185c5cjsn657bc15662af';
+const apiKey = '9e96529f88msh2f67ba4cbbe47d9p143ba1jsnee86f8b633c8';
 
 const options = {
   method: 'GET',
@@ -22,7 +22,7 @@ const options = {
 
 try {
 	const response = await axios.request(options);
-	console.log(response.data);
+	
 } catch (error) {
 	console.error(error);
 }
