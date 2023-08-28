@@ -1,39 +1,65 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, { useEffect, useState } from "react";
 
 const TestZillowApi = () => {
-  const [data, setData] = useState(null);
+  const [properties, setProperties] = useState([]); // Initialize as an empty array
+  const [loading, setLoading] = useState(true);
+
+  const fetchZillowData = async () => {
+    const url =
+      "https://zillow56.p.rapidapi.com/search?location=houston%2C%20tx";
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": "bd11308d44mshef28ddc1963f67p1dd791jsn2d911670f217",
+        "X-RapidAPI-Host": "zillow56.p.rapidapi.com",
+      },
+    };
+
+    try {
+      const response = await fetch(url, options);
+      const result = await response.json(); // Parse JSON response
+      setProperties(result.results);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    const apiKey = 'ccdd56a97emshe2a0dd7beb36da2p185c5cjsn657bc15662af';
-  
-    const options = {
-      method: 'GET',
-      url: 'https://zillow56.p.rapidapi.com/search',
-      params: {
-        location: 'charlotte, nc'
-      },
-      headers: {
-        'X-RapidAPI-Key': apiKey,
-        'X-RapidAPI-Host': 'zillow56.p.rapidapi.com'
-      }
-    };
-    
-    axios.request(options)
-      .then(response => {
-        setData(response.data);
-        console.log(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
+    fetchZillowData();
   }, []);
 
   return (
     <div>
-      {/* Your code to display the data */}
+      {loading ? (
+        <p>Loading...</p>
+      ) : properties.length > 0 ? (
+        properties.map((property) => (
+          <div key={property.zpid} className="property-card">
+            <img
+              src={property.imgSrc}
+              alt="Property"
+              className="property-image"
+            />
+            <div className="property-details">
+              <p>Address: {property.streetAddress}</p>
+              <p>
+                City: {property.city}, {property.state} {property.zipcode}
+              </p>
+              <p>Bedrooms: {property.bedrooms}</p>
+              <p>Bathrooms: {property.bathrooms}</p>
+              <p>Price: ${property.price.toLocaleString()}</p>
+              <p>Home Type: {property.homeType}</p>
+              <p>Home Status: {property.homeStatus}</p>
+            </div>
+          </div>
+        ))
+      ) : (
+        <p>No data available.</p>
+      )}
     </div>
-  )
-}
+  );
+};
 
 export default TestZillowApi;
