@@ -68,7 +68,7 @@ const ContactForm = () => {
             </div>
             <ul className="nav-list">
               <li>
-                <a href="/home">{selectedLang === "en" ? "Home" : "Inicio"}</a>
+                <a href="/">{selectedLang === "en" ? "Home" : "Inicio"}</a>
               </li>
               <li>
                 <a href="/about">
@@ -76,7 +76,7 @@ const ContactForm = () => {
                 </a>
               </li>
               <li>
-                <a href="#!" onClick={handleDropdownToggle}>
+                <a href="/product" onClick={handleDropdownToggle}>
                   {selectedLang === "en"
                     ? "Available Homes"
                     : "Casas Disponibles"}
