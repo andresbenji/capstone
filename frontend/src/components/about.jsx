@@ -64,11 +64,20 @@ const About = () => {
               </a>
             </div>
             <ul className="nav-list">
-              <li><a href="/">{selectedLang === 'en' ? 'Home' : 'Inicio'}</a></li>
-              <li><a href="/about">{selectedLang === 'en' ? 'About Us' : 'Sobre Nosotros'}</a></li>
               <li>
-                
-                <a href="/product" onClick={handleDropdownToggle}>{selectedLang === 'en' ? 'Available Homes' : 'Casas Disponibles'}</a>
+                <a href="/">{selectedLang === "en" ? "Home" : "Inicio"}</a>
+              </li>
+              <li>
+                <a href="/about">
+                  {selectedLang === "en" ? "About Us" : "Sobre Nosotros"}
+                </a>
+              </li>
+              <li>
+                <a href="/product" onClick={handleDropdownToggle}>
+                  {selectedLang === "en"
+                    ? "Available Homes"
+                    : "Casas Disponibles"}
+                </a>
                 {isDropdownOpen && (
                   <ul className="nav-dropdown">
                     <li>
@@ -95,7 +104,11 @@ const About = () => {
                   </ul>
                 )}
               </li>
-              <li><a href="/contact">{selectedLang === 'en' ? 'Contact' : 'Contacto'}</a></li>
+              <li>
+                <a href="/contact">
+                  {selectedLang === "en" ? "Contact" : "Contacto"}
+                </a>
+              </li>
               {/* <SignupPopup isOpen={isPopupOpen} onClose={closePopup} /> */}
               {/* <button onClick={openPopup}></button> */}
               {/* <li><a href="#!" onClick={openPopup} isOpen={isPopupOpen} onClose={closePopup}>
@@ -108,8 +121,10 @@ const About = () => {
 
       <div className="container">
         <div style={{ textAlign: "center" }}>
-          <h3>{selectedLang === "en" ? "About Us" : "Acera de Nosotros"}</h3>
-          <h4>
+          <h3 className="about-header">
+            {selectedLang === "en" ? "About Us" : "Acera de Nosotros"}
+          </h3>
+          <h4 className="about">
             {selectedLang === "en" ? (
               <>
                 Empowering lives and communities, our mission at Affordable
@@ -152,7 +167,7 @@ const About = () => {
             )}
           </h4>
           <hr className="custom-hr" />
-          <h3>
+          <h3 className="meet">
             {selectedLang === "en" ? "Meet the Team" : "Conoce al Equipo"}
           </h3>
         </div>
