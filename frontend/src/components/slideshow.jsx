@@ -42,7 +42,7 @@ const Slideshow = () => {
           </div>
 
           <div className="sliderItem">
-            <img src={f6} width="600" alt="house2" className="sliderImg" />
+            <img src={f6} width="700" alt="house2" className="sliderImg" />
             <div className="slideBg" />
           </div>
 

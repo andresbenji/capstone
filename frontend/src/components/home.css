@@ -89,6 +89,8 @@
   .newsletter-content h2 {
     font-size: 30px;
     margin-bottom: 20px;
+    color: #2376c8;
+    
   }
   
   .newsletter-content p {
@@ -135,4 +137,51 @@
   
   .newsletter-form button:hover {
     background-color: #012c60;
+  }
+
+  @media screen and (max-width: 768px) {
+    .benefits-icons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .benefits-icon {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .benefits-icon h4 {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .benefits-icon p {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 1200px) {
+    .benefits-icons {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .benefits-icon {
+      margin: 3px;
+      text-align: center;
+      flex: 1;
+    }
+  
+    .benefits-icon h4 {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .benefits-icon p {
+      font-size: 14px;
+      margin-top: 5px;
+    }
   }
