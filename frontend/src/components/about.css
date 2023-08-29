@@ -54,3 +54,13 @@ h4 {
   text-align: center;
   margin: 0%;
 }
+about {
+  line-height: 40px;
+}
+.about-header {
+  margin-top: 20px;
+}
+.meet {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
