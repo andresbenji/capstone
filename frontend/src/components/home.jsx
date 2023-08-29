@@ -5,7 +5,7 @@ import f11 from './keys.jpeg';
 import Slideshow from './slideshow';
 import SignupPopup from './SignupPopup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPerson } from '@fortawesome/free-solid-svg-icons'
+import { faPerson, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faFacebook, faInstagram, faSnapchat, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 
@@ -14,7 +14,7 @@ import { faFacebook, faInstagram, faSnapchat, faTwitter } from '@fortawesome/fre
 const Home = () => {
     const [selectedLang, setSelectedLang] = useState('en');
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
   
     const handleLangChange = (event) => {
       const lang = event.target.value;
@@ -25,10 +25,19 @@ const Home = () => {
         setIsDropdownOpen(!isDropdownOpen);
       };
 
-      const togglePopup = () => {
-        setIsPopupOpen(!isPopupOpen);
-      };
-    
+      const toggleModal = () => {
+        setIsModalOpen(!isModalOpen);
+    };
+
+
+      // const openPopup = () => {
+      //   setIsPopupOpen(true); // Sets isPopupOpen to true
+      // };
+      
+      // const closePopup = () => {
+      //   setIsPopupOpen(true); // Sets isPopupOpen to false
+      // };
+      
   
     return (
         <>
@@ -72,19 +81,22 @@ const Home = () => {
               {/* <SignupPopup isOpen={isPopupOpen} onClose={closePopup} /> */}
               {/* <button onClick={openPopup}></button> */}
               <li>
-                <a href="#!" onClick={togglePopup} >
-    <FontAwesomeIcon icon={faPerson} style={{color: "#ffffff,"}} onClose={togglePopup} />
-               </a>
-              </li>
+                <a href="#!" onClick={toggleModal}>
+                  <FontAwesomeIcon icon={isModalOpen ? faTimes : faPerson} style={{ color: '#ffffff' }} />
+                </a>
+                </li>
 
-              <SignupPopup isOpen={isPopupOpen} onClose={togglePopup} />
+{/* 
+              <SignupPopup isOpen={isPopupOpen} /> */}
 
             </ul>
           </nav>
         </div>
       </section>
+      {/* <SignupPopup isOpen={isPopupOpen} onClose={handlePopupToggle} /> */}
 
-      {/* { isPopupOpen && <SignupPopup isOpen={isPopupOpen} onClose={closePopup} />} */}
+      {isModalOpen && <SignupPopup isOpen={isModalOpen} onClose={toggleModal
+      } />}
       
 
 

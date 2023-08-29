@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './SignUpForm.css';
 
 const SignupPopup = ({ isOpen, onClose }) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState();
+  // const [ setEmail] = useState('');
+  // const [ setPassword] = useState();
+  const [isPopupOpen, setIsPopupOpen] = useState(isOpen);
 
   const handleFirstNameChange = (event) => {
     setFirstName(event.target.value);
@@ -15,25 +16,35 @@ const SignupPopup = ({ isOpen, onClose }) => {
     setLastName(event.target.value);
   };
 
-  const handleEmailChange = (event) => {
-    setPassword(event.target.value);
-  };
+  // const handleEmailChange = (event) => {
+  //   setPassword(event.target.value);
+  // };
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
+  // const handlePasswordChange = (event) => {
+  //   setPassword(event.target.value);
+  // };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setFirstName('');
     setLastName('');
-    setEmail('');
-    setPassword('');
+    // setEmail('');
+    // setPassword('');
 
     onClose();
 
   }
+
+  useEffect(() => {
+    if (isOpen !== isPopupOpen){
+      setIsPopupOpen(isOpen)
+    }
+  }, [isOpen]);
+
+
   if (!isOpen) return null;
+
+
 
   return (
     <div className={`signup-popup ${isOpen ? 'open' : ''}`}>
@@ -61,18 +72,19 @@ const SignupPopup = ({ isOpen, onClose }) => {
           <input
             type="email"
             placeholder="Email"
-            value={email}
-            onChange={handleEmailChange}
+            
+            // onChange={handleEmailChange}
             required
           />
           <input
             type="password"
             placeholder="Password"
-            value={password}
-            onChange={handlePasswordChange}
+            
+            // onChange={handlePasswordChange}
             required
           />
           <button onClick={onClose} type="submit">Submit</button>
+          
         </form>
         </div>
       </div>
