@@ -11,15 +11,15 @@ import bcrypt from "bcrypt";
 // import User from "./models/userModel.js"
 import mongoose from "mongoose";
 
-// const corsOptions = {
-//   origin: "http://localhost:3000", // Change this to your frontend's URL
-//   optionsSuccessStatus: 200,
-// };
+const corsOptions = {
+  origin: "http://localhost:3000", // Change this to your frontend's URL
+  optionsSuccessStatus: 200,
+};
 
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors);
+app.use(cors(corsOptions));
 
 connectDB();
 
