@@ -35,6 +35,7 @@ const ContactForm = () => {
   return (
     <>
       {/* Start of nav */}
+
       <select id="lang-switch" onChange={handleLangChange}>
         <option value="en">English</option>
         <option value="es">Espanol</option>
@@ -68,7 +69,7 @@ const ContactForm = () => {
             </div>
             <ul className="nav-list">
               <li>
-                <a href="/home">{selectedLang === "en" ? "Home" : "Inicio"}</a>
+                <a href="/">{selectedLang === "en" ? "Home" : "Inicio"}</a>
               </li>
               <li>
                 <a href="/about">
@@ -76,7 +77,7 @@ const ContactForm = () => {
                 </a>
               </li>
               <li>
-                <a href="#!" onClick={handleDropdownToggle}>
+                <a href="/product" onClick={handleDropdownToggle}>
                   {selectedLang === "en"
                     ? "Available Homes"
                     : "Casas Disponibles"}
@@ -123,6 +124,7 @@ const ContactForm = () => {
         </div>
       </section>
       {/* End of Nav */}
+
       <section class="middle-section">
         <div class="middle-container">
           <img

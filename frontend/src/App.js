@@ -16,7 +16,6 @@ import "./components/testimonials.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ContactForm from "./components/contacts";
 
-
 const App = () => {
   return (
     <>
@@ -26,7 +25,7 @@ const App = () => {
         {/* {<Slideshow/>} */}
         {/* {<Testimonial/>} */}
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/product" element={<RentalsPage />} />
@@ -35,7 +34,6 @@ const App = () => {
         {/* <Footer /> */}
       </Router>
     </>
-
   );
 };
 
