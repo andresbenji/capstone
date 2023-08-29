@@ -17,7 +17,6 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ContactForm from "./components/contacts";
 import TestZillowApi from "./components/testZillowApi";
 
-
 const App = () => {
   return (
     <>
@@ -37,7 +36,6 @@ const App = () => {
         {/* <Footer /> */}
       </Router>
     </>
-
   );
 };
 
