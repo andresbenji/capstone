@@ -5,7 +5,7 @@ const TestZillowApi = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    const apiKey = 'ccdd56a97emshe2a0dd7beb36da2p185c5cjsn657bc15662af';
+    const apiKey = '9e96529f88msh2f67ba4cbbe47d9p143ba1jsnee86f8b633c8';
   
     const options = {
       method: 'GET',
@@ -31,7 +31,7 @@ const TestZillowApi = () => {
 
   return (
     <div>
-      {/* Your code to display the data */}
+    
     </div>
   )
 }

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-const RapidApiExample = () => {
+const ZillowApi = () => {
   const [data, setData] = useState([]);
-  const apiKey = 'ccdd56a97emshe2a0dd7beb36da2p185c5cjsn657bc15662af';
+  const apiKey = '9e96529f88msh2f67ba4cbbe47d9p143ba1jsnee86f8b633c8';
   const apiUrl = 'https://zillow56.p.rapidapi.com/';
 
   useEffect(() => {
@@ -41,4 +41,4 @@ const RapidApiExample = () => {
   );
 };
 
-export default RapidApiExample;
+export default ZillowApi;

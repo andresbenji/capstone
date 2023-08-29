@@ -1,60 +1,52 @@
 import React, { useState } from 'react';
 
-const SignupPopup = ({ isOpen, onClose }) => {
+const SignupPopup = () => {
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState('');
 
-  const handleEmailChange = (event) => {
-    setPassword(event.target.value);
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:3001/auth/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, email, password }),
+      });
+      const data = await response.json();
+      console.log(data);
+      // Handle success or display error messages
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    ///
-  }
-  if (!isOpen) return null;
 
   return (
-    <div className="signup-popup">
-      <div className="popup-content">
-      <h2>Login or Sign Up</h2>
-        <form onSubmit={handleSubmit}>
-
-          <input
-          type="firstName"
-          placeholder="First Name"
-          required
-          />
-
-          <input
-          type="lastName"
-          placeholder="Last Name"
-          required
-          />
-
-          <input
-            type="email"
-            placeholder="Email"
-            // value={email}
-            onChange={handleEmailChange}
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            // value={password}
-            onChange={handlePasswordChange}
-            required
-          />
-          <button type="submit">Submit</button>
-        </form>
-        
-      </div>
+    <div>
+      <h2>Register</h2>
+      <form onSubmit={handleRegister}>
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <button type="submit">Register</button>
+      </form>
     </div>
   );
 };
