@@ -13,7 +13,7 @@ const SignupPopup = ({ isOpen, onClose }) => {
 
   const handleRegister = async () => {
     try {
-      await axios.post("https://capstone-backend-lncr.onrender.com//register", {
+      await axios.post("https://capstone-backend-lncr.onrender.com/register", {
         name,
         email,
         password,
@@ -28,7 +28,7 @@ const SignupPopup = ({ isOpen, onClose }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("https://capstone-backend-lncr.onrender.com//login", {
+      const response = await axios.post("https://capstone-backend-lncr.onrender.com/login", {
         email: loginEmail,
         password: loginPassword,
       });
