@@ -12,7 +12,7 @@ import bcrypt from "bcrypt";
 import mongoose from "mongoose";
 
 const corsOptions = {
-  origin: "http://localhost:3000", // Change this to your frontend's URL
+  origin: "https://capstone-jqgn.onrender.com", // Change this to your frontend's URL
   optionsSuccessStatus: 200,
 };
 
