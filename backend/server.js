@@ -2,7 +2,7 @@ import express from "express";
 import path from "path";
 import dotenv from "dotenv";
 dotenv.config();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 10000;
 import connectDB from "./config/db.js";
 import bodyParser from "body-parser"
 import jwt from "jsonwebtoken"
@@ -11,15 +11,15 @@ import bcrypt from "bcrypt";
 // import User from "./models/userModel.js"
 import mongoose from "mongoose";
 
-const corsOptions = {
-  origin: "http://localhost:3000", // Change this to your frontend's URL
-  optionsSuccessStatus: 200,
-};
+// const corsOptions = {
+//   origin: "http://localhost:3000", // Change this to your frontend's URL
+//   optionsSuccessStatus: 200,
+// };
 
 const app = express();
 
 app.use(bodyParser.json());
-app.use(cors(corsOptions));
+app.use(cors);
 
 connectDB();
 
