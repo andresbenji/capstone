@@ -71,7 +71,7 @@ const Home = () => {
             </div>
             <ul className="nav-list">
               <li>
-                <a href="/home">{selectedLang === "en" ? "Home" : "Inicio"}</a>
+                <a href="/">{selectedLang === "en" ? "Home" : "Inicio"}</a>
               </li>
               <li>
                 <a href="/about">

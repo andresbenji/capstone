@@ -35,6 +35,7 @@ const ContactForm = () => {
   return (
     <>
       {/* Start of nav */}
+
       <select id="lang-switch" onChange={handleLangChange}>
         <option value="en">English</option>
         <option value="es">Espanol</option>
@@ -123,6 +124,7 @@ const ContactForm = () => {
         </div>
       </section>
       {/* End of Nav */}
+
       <section class="middle-section">
         <div class="middle-container">
           <img
