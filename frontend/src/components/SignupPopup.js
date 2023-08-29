@@ -22,7 +22,7 @@ const SignupPopup = ({ isOpen, onClose }) => {
       console.log("Registration successful");
       onClose();
     } catch (error) {
-      console.error("Registration failed:", error.response);
+      console.error("Registration failed:", error.response.data);
     }
   };
 
