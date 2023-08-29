@@ -13,7 +13,7 @@ const SignupPopup = ({ isOpen, onClose }) => {
 
   const handleRegister = async () => {
     try {
-      await axios.post("http://localhost:5000/register", {
+      await axios.post("http://localhost:10000/register", {
         name,
         email,
         password,
@@ -22,13 +22,13 @@ const SignupPopup = ({ isOpen, onClose }) => {
       console.log("Registration successful");
       onClose();
     } catch (error) {
-      console.error("Registration failed:", error.response.data);
+      console.error("Registration failed:", error.response);
     }
   };
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/login", {
+      const response = await axios.post("http://localhost:10000/login", {
         email: loginEmail,
         password: loginPassword,
       });
