@@ -1,100 +1,43 @@
-// import React, { useState } from 'react';
-
-// const SignupPopup = ({ isOpen, onClose }) => {
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState();
-
-//   const handleEmailChange = (event) => {
-//     setPassword(event.target.value);
-//   };
-
-//   const handlePasswordChange = (event) => {
-//     setPassword(event.target.value);
-//   };
-
-//   const handleSubmit = (event) => {
-//     event.preventDefault();
-
-//     ///
-//   }
-//   if (!isOpen) return null;
-
-//   return (
-//     <div className="signup-popup">
-//       <div className="popup-content">
-//       <h2>Login or Sign Up</h2>
-//         <form onSubmit={handleSubmit}>
-
-//           <input
-//           type="firstName"
-//           placeholder="First Name"
-//           required
-//           />
-
-//           <input
-//           type="lastName"
-//           placeholder="Last Name"
-//           required
-//           />
-
-//           <input
-//             type="email"
-//             placeholder="Email"
-//             // value={email}
-//             onChange={handleEmailChange}
-//             required
-//           />
-//           <input
-//             type="password"
-//             placeholder="Password"
-//             // value={password}
-//             onChange={handlePasswordChange}
-//             required
-//           />
-//           <button type="submit">Submit</button>
-//         </form>
-
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default SignupPopup;
-
 import React, { useState } from "react";
 import axios from "axios";
 import "./SignUpForm.css";
 
 const SignupPopup = ({ isOpen, onClose }) => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState("");
+  const [loginEmail, setLoginEmail] = useState("");
+  const [phonenumber, setPhonenumber] = useState("");
+  const [loginPassword, setLoginPassword] = useState("");
+  const [token, setToken] = useState("");
 
-  const handleFirstNameChange = (event) => {
-    setFirstName(event.target.value);
+  const handleRegister = async () => {
+    try {
+      await axios.post("http://localhost:5000/register", {
+        name,
+        email,
+        password,
+        phonenumber,
+      });
+      console.log("Registration successful");
+      onClose();
+    } catch (error) {
+      console.error("Registration failed:", error.response);
+    }
   };
 
-  const handleLastNameChange = (event) => {
-    setLastName(event.target.value);
-  };
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setPassword("");
-
-    onClose();
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post("http://localhost:5000/login", {
+        email: loginEmail,
+        password: loginPassword,
+      });
+      setToken(response.data.token);
+      console.log("Login successful");
+      onClose();
+    } catch (error) {
+      console.error("Login failed:", error);
+    }
   };
   if (!isOpen) return null;
 
@@ -102,43 +45,53 @@ const SignupPopup = ({ isOpen, onClose }) => {
     <div className={`signup-popup ${isOpen ? "open" : ""}`}>
       <div className="signup-popup">
         <div className="popup-content">
-          <h2>Login or Sign Up</h2>
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="First Name"
-              value={firstName}
-              onChange={handleFirstNameChange}
-              required
-            />
+          <button className="close-button" onClick={onClose}>
+            Close
+          </button>
 
-            <input
-              type="text"
-              placeholder="Last Name"
-              value={lastName}
-              onChange={handleLastNameChange}
-              required
-            />
+          <h2>Register</h2>
+          <input
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Phone Number"
+            value={phonenumber}
+            onChange={(e) => setPhonenumber(e.target.value)}
+          />
+          <button onClick={handleRegister}>Register</button>
 
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={handleEmailChange}
-              required
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={handlePasswordChange}
-              required
-             />
-             {/* onClick={onClose} */}
-            <button  type="submit">
-              Submit
-            </button>
-          </form>
+          <h2>Login</h2>
+          <input
+            type="email"
+            placeholder="Email"
+            value={loginEmail}
+            onChange={(e) => setLoginEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={loginPassword}
+            onChange={(e) => setLoginPassword(e.target.value)}
+          />
+          <button onClick={handleLogin}>Login</button>
+
+          {token && <p>Token: {token}</p>}
         </div>
       </div>
     </div>
