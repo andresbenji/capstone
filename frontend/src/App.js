@@ -15,6 +15,7 @@ import "./components/slideshow.css";
 import "./components/testimonials.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ContactForm from "./components/contacts";
+import TestZillowApi from "./components/testZillowApi";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/product" element={<RentalsPage />} />
+          <Route path="/testzillowApi" element={<TestZillowApi />} />
           {/* <Route path="/contact" element={<ContactForm />} /> */}
         </Routes>
         {/* <Footer /> */}

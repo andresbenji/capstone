@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+import React, { useState } from 'react';
+import f9 from './gp.jpeg';
+import f10 from './family.jpeg';
+import f11 from './keys.jpeg';
+import Slideshow from './slideshow';
+import SignupPopup from './SignupPopup';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPerson, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faFacebook, faInstagram, faSnapchat, faTwitter } from '@fortawesome/free-brands-svg-icons';
+
+
+
+
+const Home = () => {
+    const [selectedLang, setSelectedLang] = useState('en');
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  
+    const handleLangChange = (event) => {
+      const lang = event.target.value;
+      setSelectedLang(lang);
+    };
+=======
 import React, { useState } from "react";
 import f9 from "./gp.jpeg";
 import f10 from "./family.jpeg";
@@ -17,15 +41,45 @@ const Home = () => {
   const [selectedLang, setSelectedLang] = useState("en");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isPopupOpen, setIsPopupOpen] = useState(false);
+>>>>>>> main
 
   const handleLangChange = (event) => {
     const lang = event.target.value;
     setSelectedLang(lang);
   };
 
+<<<<<<< HEAD
+      const toggleModal = () => {
+        setIsModalOpen(!isModalOpen);
+    };
+
+
+      // const openPopup = () => {
+      //   setIsPopupOpen(true); // Sets isPopupOpen to true
+      // };
+      
+      // const closePopup = () => {
+      //   setIsPopupOpen(true); // Sets isPopupOpen to false
+      // };
+      
+  
+    return (
+        <>
+    
+          <select id="lang-switch" onChange={handleLangChange}>
+            <option value="en">English</option>
+            <option value="es">Espanol</option>
+          </select>
+    
+          <h1>
+            <span lang="en" style={{ display: selectedLang === 'en' ? 'block' : 'none' }}></span>
+            <span lang="es" style={{ display: selectedLang === 'es' ? 'block' : 'none' }}></span>
+          </h1>
+=======
   const handleDropdownToggle = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+>>>>>>> main
 
   const openPopup = () => {
     setIsPopupOpen(!isPopupOpen);
@@ -109,6 +163,22 @@ const Home = () => {
                   </ul>
                 )}
               </li>
+<<<<<<< HEAD
+              <li>
+                <a href="#!">{selectedLang === 'en' ? 'Contact' : 'Contacto'}</a>
+                </li>
+              {/* <SignupPopup isOpen={isPopupOpen} onClose={closePopup} /> */}
+              {/* <button onClick={openPopup}></button> */}
+              <li>
+                <a href="#!" onClick={toggleModal}>
+                  <FontAwesomeIcon icon={isModalOpen ? faTimes : faPerson} style={{ color: '#ffffff' }} />
+                </a>
+                </li>
+
+{/* 
+              <SignupPopup isOpen={isPopupOpen} /> */}
+
+=======
 
               <li>
                 <a href="/contact">
@@ -120,10 +190,19 @@ const Home = () => {
               {/* <li><a href="#!" onClick={openPopup} isOpen={isPopupOpen} onClose={closePopup}>
     <FontAwesomeIcon icon={faPerson} style={{color: "#ffffff,"}} />
   </a></li> */}
+>>>>>>> main
             </ul>
           </nav>
         </div>
       </section>
+<<<<<<< HEAD
+      {/* <SignupPopup isOpen={isPopupOpen} onClose={handlePopupToggle} /> */}
+
+      {isModalOpen && <SignupPopup isOpen={isModalOpen} onClose={toggleModal
+      } />}
+      
+=======
+>>>>>>> main
 
       <Slideshow />
 

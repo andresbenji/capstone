@@ -5,13 +5,6 @@ import RentalCard from "./RentalCard";
 // import axios from "axios";
 import Footer from "./footer";
 // import Nav from "./";
-import house1 from "../components/images/house1.webp";
-import house2 from "../components/images/house2.webp";
-import house3 from "../components/images/house3.webp";
-import house4 from "../components/images/house4.webp";
-import house5 from "../components/images/house5.webp";
-import house6 from "../components/images/house6.webp";
-
 const RentalsPage = () => {
   const [filter, setFilter] = useState("all");
   const [searchText, setSearchText] = useState("");
@@ -44,74 +37,36 @@ const RentalsPage = () => {
   const closePopup = () => {
     setIsPopupOpen(false);
   };
+  
+  
+  const [properties, setProperties] = useState([]); // Initialize as an empty array
 
-  const rentalsData = [
-    {
-      id: 1,
-      title: "1510 Catherine Simmons Ave 2",
-      location: "1510 Catherine Simmons Ave 2, Charlotte, NC 28216",
-      price: "$995/month",
-      image: "./public/images/home2.webp", // Replace with actual image URL
-    },
-    {
-      id: 2,
-      title: "1032 Karendale Ave",
-      location: "1032 Karendale Ave, Charlotte, NC 28208",
-      price: "$499/month",
-      image: "./public/images/house2.webp", // Replace with actual image URL
-    },
+  const fetchZillowData = async () => {
+    const url =
+      "https://zillow56.p.rapidapi.com/search?location=lancaster%2C%20sc";
+    const options = {
+      method: "GET",
+      headers: {
+        "X-RapidAPI-Key": "a44e0c850amsh89f3d89e240b970p1ddcf6jsn12f84a1a5f5f",
+        "X-RapidAPI-Host": "zillow56.p.rapidapi.com",
+      },
+    };
 
-    {
-      id: 3,
-      title: "906 Harrill St",
-      location: "906 Harrill St, Charlotte, NC 28205",
-      price: "$1,095/month",
-      image: "house3.webp", // Replace with actual image URL
-    },
-    {
-      id: 4,
-      title: "4915 Osage Cir",
-      location: "4915 Osage Cir, Charlotte, NC 28269",
-      price: "$1,450/month",
-      image: "house4.webp", // Replace with actual image URL
-    },
-
-    {
-      id: 5,
-      title: "2634 Druid Hills Way, Unit 2",
-      location: "2634 Druid Hills Way, Unit 2, Charlotte, NC 28206",
-      price: "$920/month",
-      image: "house5.webp", // Replace with actual image URL
-    },
-    {
-      id: 6,
-      title: "3100 Cosby Pl",
-      location: "3100 Cosby Pl, Charlotte, NC 28205",
-      price: "$1,350/month",
-      image: "house6.webp", // Replace with actual image URL
-    },
-    {
-      id: 7,
-      title: "3100 Cosby Pl",
-      location: "3100 Cosby Pl, Charlotte, NC 28205",
-      price: "$1,350/month",
-      image: "house6.webp", // Replace with actual image URL
-    },
-    {
-      id: 8,
-      title: "3100 Cosby Pl",
-      location: "3100 Cosby Pl, Charlotte, NC 28205",
-      price: "$1,350/month",
-      image: "house6.webp", // Replace with actual image URL
-    },
-  ];
-
-  const filteredRentals = rentalsData.filter((rental) => {
-    if (filter === "all" || rental.type === filter) {
-      return rental.title.toLowerCase().includes(searchText.toLowerCase());
+    try {
+      const response = await fetch(url, options);
+      const result = await response.json(); // Parse JSON response
+      setProperties(result.results);
+      
+    } catch (error) {
+      console.error("Error fetching data:", error);
+     
     }
-    return false;
-  });
+  };
+
+  useEffect(() => {
+    fetchZillowData();
+  }, []);
+
 
   return (
     // header start
@@ -223,8 +178,8 @@ const RentalsPage = () => {
         />
       </div>
       <div className="rentals-list">
-        {filteredRentals.map((rental) => (
-          <RentalCard key={rental.id} rental={rental} />
+        {properties.map((property) => (
+          <RentalCard key={property.zpid} rental={property} />
         ))}
       </div>
 

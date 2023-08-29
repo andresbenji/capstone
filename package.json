@@ -7,21 +7,31 @@
     "@fortawesome/free-brands-svg-icons": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
+<<<<<<< HEAD
     "axios": "^1.5.0",
+=======
+    "axios": "^1.4.0",
+>>>>>>> main
     "bcryptjs": "^2.4.3",
     "chalk": "^5.3.0",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+<<<<<<< HEAD
     "jquery": "^3.7.0",
+=======
+    "jquery-modal": "^0.9.2",
+>>>>>>> main
     "mongoose": "^7.4.3",
-    "node": "^20.5.0"
+    "node": "^20.5.0",
+    "react-modal": "^3.16.1"
   },
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "data:import": "node backend/seeder.js"
+    "data:import": "node backend/seeder.js",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "Andres Cuellar",
   "license": "ISC",

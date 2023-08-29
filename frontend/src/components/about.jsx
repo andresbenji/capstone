@@ -64,6 +64,7 @@ const About = () => {
               </a>
             </div>
             <ul className="nav-list">
+<<<<<<< HEAD
               <li>
                 <a href="/">{selectedLang === "en" ? "Home" : "Inicio"}</a>
               </li>
@@ -78,6 +79,13 @@ const About = () => {
                     ? "Available Homes"
                     : "Casas Disponibles"}
                 </a>
+=======
+              <li><a href="/">{selectedLang === 'en' ? 'Home' : 'Inicio'}</a></li>
+              <li><a href="/about">{selectedLang === 'en' ? 'About Us' : 'Sobre Nosotros'}</a></li>
+              <li>
+                
+                <a href="/product" onClick={handleDropdownToggle}>{selectedLang === 'en' ? 'Available Homes' : 'Casas Disponibles'}</a>
+>>>>>>> main
                 {isDropdownOpen && (
                   <ul className="nav-dropdown">
                     <li>
@@ -104,12 +112,16 @@ const About = () => {
                   </ul>
                 )}
               </li>
+<<<<<<< HEAD
 
               <li>
                 <a href="/contact">
                   {selectedLang === "en" ? "Contact" : "Contacto"}
                 </a>
               </li>
+=======
+              <li><a href="/contact">{selectedLang === 'en' ? 'Contact' : 'Contacto'}</a></li>
+>>>>>>> main
               {/* <SignupPopup isOpen={isPopupOpen} onClose={closePopup} /> */}
               {/* <button onClick={openPopup}></button> */}
               {/* <li><a href="#!" onClick={openPopup} isOpen={isPopupOpen} onClose={closePopup}>

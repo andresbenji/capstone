@@ -47,3 +47,66 @@
 .sliderImg{
     z-index: 1;
 }
+
+/* Mobile View */
+/* @media screen and (max-width: 767px) {
+    .slider {
+      height: 50vh; /* Adjust the height as needed */
+    /* } */
+  
+    /* .sliderWrapper {
+      width: 300vw; /* Adjust the width as needed */
+    /* } */ 
+  
+    /* .sliderItem {
+      width: 100vw;
+    } */
+  
+    /* .sliderImg {
+      max-width: 100%; /* Ensure images fit within the slider */
+      /* height: auto; /* Maintain aspect ratio */
+    /* } */ 
+  
+    /* .navButton {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
+  } */
+  
+
+
+
+@media screen and (max-width: 768px) {
+  .sliderItem { width: 90vw; /* Make slider item bigger on smaller screens */
+    transition: transform 20s ease-in-out; /* Slower transition on smaller screens */
+  }
+
+    .navButton {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
+  
+    .slider {
+      height: 30%;
+    }
+  
+    .sliderWrapper {
+      width: 300vw;
+    }
+  
+    .sliderItem {
+      width: 300px;
+    }
+  
+
+
+  @media screen and (min-width: 769px) and (max-width: 1200px) {
+    .sliderWrapper {
+      width: 400vw;
+    }
+  
+    .sliderItem {
+      width: 400px;
+    }
+  }
+}
