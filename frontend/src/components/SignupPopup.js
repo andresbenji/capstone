@@ -13,7 +13,7 @@ const SignupPopup = ({ isOpen, onClose }) => {
 
   const handleRegister = async () => {
     try {
-      await axios.post("5000/register", {
+      await axios.post("http://localhost:5000/register", {
         name,
         email,
         password,
@@ -28,7 +28,7 @@ const SignupPopup = ({ isOpen, onClose }) => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("5000/login", {
+      const response = await axios.post("http://localhost:5000/login", {
         email: loginEmail,
         password: loginPassword,
       });
