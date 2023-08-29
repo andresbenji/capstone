@@ -2,7 +2,7 @@ import express from "express";
 import path from "path";
 import dotenv from "dotenv";
 dotenv.config();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 10000;
 import connectDB from "./config/db.js";
 import bodyParser from "body-parser"
 import jwt from "jsonwebtoken"
