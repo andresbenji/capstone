@@ -49,7 +49,7 @@ const SignupPopup = ({ isOpen, onClose }) => {
             Close
           </button>
 
-          <h2>Register</h2>
+          <h2 className="pop-title">Register</h2>
           <input
             type="text"
             placeholder="Name"
