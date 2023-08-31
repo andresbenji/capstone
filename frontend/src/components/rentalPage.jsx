@@ -47,7 +47,7 @@ const RentalsPage = () => {
     const options = {
       method: "GET",
       headers: {
-        "X-RapidAPI-Key": "7c8c44d45amsh8839af264c20861p1ac85ejsn0f33f282afe8",
+        "X-RapidAPI-Key": "97cffe709bmsha6b51e695f9bb34p10cd76jsne03536c8597a",
         "X-RapidAPI-Host": "zillow56.p.rapidapi.com",
       },
     };
